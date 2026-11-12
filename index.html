@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A simple personal budget tracker to manage income and expenses.">
+    <title>My Budget Tracker</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+
+        <header class="header-card">
+            <div>
+                <p class="eyebrow">PERSONAL FINANCE</p>
+                <h1>My Budget Tracker</h1>
+                <p class="subtitle">Manage your money. Control your future.</p>
+            </div>
+            <div class="wallet-icon">💰</div>
+        </header>
+
+        <section class="summary">
+            <article class="summary-card">
+                <p>Total Budget</p>
+                <h2 id="budget">$2,000.00</h2>
+            </article>
+
+            <article class="summary-card">
+                <p>Total Expenses</p>
+                <h2 id="total-expenses">$0.00</h2>
+            </article>
+
+            <article class="summary-card balance-card">
+                <p>Remaining Balance</p>
+                <h2 id="remaining">$2,000.00</h2>
+            </article>
+        </section>
+
+        <section class="card">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow green">TRACK YOUR SPENDING</p>
+                    <h2>Add New Expense</h2>
+                    <p class="description">Enter your expense details below.</p>
+                </div>
+            </div>
+
+            <form id="expense-form">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="expense">Expense Name</label>
+                        <input type="text" id="expense" placeholder="e.g. Groceries" required maxlength="60">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="amount">Amount ($)</label>
+                        <input type="number" id="amount" placeholder="e.g. 50" min="0.01" step="0.01" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="category">Category</label>
+                        <select id="category" required>
+                            <option value="">Choose category</option>
+                            <option>Food</option>
+                            <option>Transport</option>
+                            <option>Education</option>
+                            <option>Shopping</option>
+                            <option>Bills</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="date" id="date" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="add-button">+ Add Expense</button>
+                <p id="message" class="message" role="status"></p>
+            </form>
+        </section>
+
+        <section class="card">
+            <div class="table-heading">
+                <div>
+                    <p class="eyebrow green">YOUR RECORDS</p>
+                    <h2>Expense History</h2>
+                    <p class="description">Your recent spending activities.</p>
+                </div>
+                <span id="record-count" class="record-label">0 Records</span>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Expense</th>
+                            <th>Category</th>
+                            <th>Date</th>
+                            <th>Amount</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="expense-list">
+                        <tr>
+                            <td colspan="5" class="empty-row">No expenses added yet.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2026 My Budget Tracker | Manage your money wisely.</p>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
